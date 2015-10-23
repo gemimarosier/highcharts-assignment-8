@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8">
+        <title>U.S. School Statistics</title>
+        
+        <link href="styles/highcharts.css" rel="stylesheet">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"> </script>
+        <script src="js/highcharts.js"></script> 
+        
+        <script src="js/themes/grid-light.js"></script>
+
+
+
+
+</head>
+
+
+<body>
+
+<article>
+
+<h1>Gang Presence and Illegal Drug Use in U.S. School Systems</h1>
+
+<p>By Gemima Rosier</p>
+
+<p> Many reports support the correlation of illegal drug use and gang presence in schools. A common practice in gangs is the obtaining and distribution of illegal drugs. According to a national survey of American attitudes on substance abuse taken in 2010, students enrolled in schools with gangs were five times more likely to use marijuana and 12 times more likely to use tobacco. Thus, the following charts display a common trend. The study also stated students are three times more likely to be able to get drugs within an hour if they attending schools with gang activity. Addressing gang activity can be a route to minimizing the use the illegal drugs by adolescents. </p>
+<p>Source: <a href="http://www.casacolumbia.org/addiction-research/reports/national-survey-american-attitudes-substance-abuse-teens-parents-2010">www.casacolumbia.org</a>.   </p>
+
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script> 
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: 'Illegal Drug Availability, Grade 9-12'
+        },
+        subtitle: {
+            text: 'Source: nces.ed.gov'
+        },
+        xAxis: {
+            categories: ['2001', '2003', '2005', '2007', '2009', '2011', '2013' ]
+        },
+        yAxis: {
+            title: {
+                text: 'Percentage (%)'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        series: [{
+            
+            data: [28.5, 28.7, 25.4, 22.3, 22.7, 26.5, 22.1 ]
+        } ]
+    });
+});
+</script>
+
+<p>Source: National Center for Education Statistics <a href="http://nces.ed.gov/programs/digest/d14/tables/dt14_232.70.asp">Table 232.70 	Percentage of students in grades 9-12 who reported that illegal drugs were made available to them on school property during the previous 12 months, by selected student characteristics: Selected years, 1993 through 2013</a>. </p>
+
+<div id="second" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+<script>
+$(function () {
+    // Create the chart
+    $('#second').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Percentage of gangs reported to be present at school, Ages 12-18'
+        },
+        subtitle: {
+            text: 'Source: <a href="http://nces.ed.gov/">netmarketshare.com</a>.'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Percentage (%)'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        series: [{
+            name: "Years",
+            colorByPoint: true,
+            data: [{
+                name: "2001",
+                y: 20.1
+                
+            }, {
+                name: "2003",
+                y: 20.9
+               
+            }, {
+                name: "2005",
+                y: 24.2
+              
+            }, {
+                name: "2007",
+                y: 23.2
+                
+            }, {
+                name: "2009",
+                y: 20.4
+                
+            }, {
+                name: "2011",
+                y: 17.5
+                
+            }, {
+                name: "2013",
+                y:12.4
+                
+           
+            }]
+        }],
+    
+    });
+});
+</script>
+
+<p>Source: National Center for Education Statistics <a href="http://nces.ed.gov/programs/digest/d14/tables/dt14_230.20.asp">Table 230.20 Percentage of students ages 12-18 who reported that gangs were present at school during the school year, by selected student and school characteristics and urbanicity: Selected years, 2001 through 2013</a>. </p>
+
+</article>
+
+</body>
+</html>
